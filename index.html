@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TicTacToe</title>
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="top-display">
+            <div class="show-round">Round : <span id="round"></span></div>
+            <div class="playerOne">Player 1: <span class="player1"></span> </div>
+            <div class="playerTwo">Player 2: <span class="player2"></span> </div>
+        </div>
+        <div class="container">
+            <div id="1" class="cell"></div>
+            <div id="2" class="cell"></div>
+            <div id="3" class="cell"></div>
+            <div id="4" class="cell"></div>
+            <div id="5" class="cell"></div>
+            <div id="6" class="cell"></div>
+            <div id="7" class="cell"></div>
+            <div id="8" class="cell"></div>
+            <div id="9" class="cell"></div>
+        </div>
+        <div class="bottom-display">
+            <div id="current-player">Current Player: <span class="current-player"></span></div>
+            <button id="restartBtn" type="button">Start</button>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p id="winnerMessage"></p>
+                </div>
+              </div>  
+                </div>
+        </div> 
+</body>
+</html>
