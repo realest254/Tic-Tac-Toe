@@ -15,7 +15,7 @@ body, html {
     height: 90vw; /* Same as width to maintain square shape */
     max-width: 400px; /* Maximum width to ensure it doesn't become too large */
     max-height: 400px; /* Maximum height to ensure it doesn't become too large */
-    margin: 10vh auto;
+    margin: 10px auto;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -32,7 +32,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 20vw; /* Adjust the font size relative to the container width */
+    font-size: 8vw; /* Adjust the font size relative to the container width */
     color: #555;
     border-radius: 10px;
     cursor: pointer;
@@ -45,7 +45,6 @@ body, html {
 }
 .top-display {
     width: 100%;
-    padding-top: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
