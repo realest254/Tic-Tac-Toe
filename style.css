@@ -11,9 +11,11 @@ body, html {
 }
 
 .container {
-    width: 400px;
-    height: 400px;
-    margin: 10px auto;
+    width: 90vw; /* 90% of viewport width */
+    height: 90vw; /* Same as width to maintain square shape */
+    max-width: 400px; /* Maximum width to ensure it doesn't become too large */
+    max-height: 400px; /* Maximum height to ensure it doesn't become too large */
+    margin: 10vh auto;
     background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -24,22 +26,26 @@ body, html {
     padding: 10px;
 }
 
+
 .cell {
     background-color: #d3d3d3;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 6em;
+    font-size: 20vw; /* Adjust the font size relative to the container width */
     color: #555;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+
 .cell:hover {
     background-color: #bbb;
 }
 .top-display {
+    width: 100%;
+    padding-top: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;

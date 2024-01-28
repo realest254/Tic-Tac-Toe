@@ -60,7 +60,7 @@ const Player = (mark) => mark;
 let player1 = Player("x");
 let player2 = Player("o");
 
-const MainGame = ((GameBoard,player1,player2) => {
+const MainGame = ((GameBoard, player1, player2) => {
     let currentPlayer = player1;
     let player1Points = 0;
     let player2Points = 0;
@@ -80,10 +80,9 @@ const MainGame = ((GameBoard,player1,player2) => {
     const updateRoundDisplay = () => {
         if (round <=3){
             span.textContent = round;
-        }else if(round >3 ){
+        }else if (round===4){
             span.textContent = "3";
         }
-        
     };
 
     const updatePlayerIndicators = () => {
@@ -148,7 +147,7 @@ const MainGame = ((GameBoard,player1,player2) => {
                 winnerMessage.textContent = 'Invalid move. Cell is already occupied.';
             }
         }if (round === 4) {
-            span.textContent = "3";
+            
             if (player1Points > player2Points) {
                 winnerMessage.textContent = `x wins!!! ${player1Points} points`;
             } else if (player2Points > player1Points) {
@@ -158,44 +157,6 @@ const MainGame = ((GameBoard,player1,player2) => {
             }
         }
     };
-    cells.forEach((cell) => {
-        cell.addEventListener("click", () => {
-            const index = parseInt(cell.id);
-            let row, col;
-                
-            if (index === 1) {
-                row = 0;
-                col = 0;
-            } else if (index === 2) {
-                row = 0;
-                col = 1;
-            } else if (index === 3) {
-                row = 0;
-                col = 2;
-            } else if (index === 4) {
-                row = 1;
-                col = 0;
-            } else if (index === 5) {
-                row = 1;
-                col = 1;
-            } else if (index === 6) {
-                row = 1;
-                col = 2;
-            } else if (index === 7) {
-                row = 2;
-                col = 0;
-            } else if (index === 8) {
-                row = 2;
-                col = 1;
-            } else if (index === 9) {
-                row = 2;
-                col = 2;
-            } 
-            
-            makeMove(row, col, cell);
-        });
-    });
-
     function resetGame() {
         cells.forEach(cell => {
             cell.removeEventListener("click", cellClickHandler);
@@ -252,8 +213,10 @@ const MainGame = ((GameBoard,player1,player2) => {
     }
     restartBtn.addEventListener("click", resetGame);
 
-    return {
-        makeMove
-    };
-})(GameBoard,player1,player2);
+    // Initialize the game by attaching event listeners to cells
+    cells.forEach(cell => {
+        cell.addEventListener("click", cellClickHandler);
+    });
+
+})(GameBoard, player1, player2);
 
